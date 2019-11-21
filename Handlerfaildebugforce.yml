@@ -1,0 +1,22 @@
+---
+- name: Testing Handlers
+  hosts: all
+  force_handlers: true
+  tasks:
+  - name: Install 7zip
+    win_chocolatey:
+      name: flashplayerppapi
+      state: present
+    notify:
+    - reboot server
+  - name: failling the task
+    debug:   
+      msg: failling TASK
+    failed_when: true
+  - name: This is another task
+    debug:
+      mag: final task  
+  handlers:
+  - name: reboot server
+    win_reboot:
+...
