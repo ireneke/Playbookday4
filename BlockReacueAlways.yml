@@ -4,14 +4,21 @@
   force_handlers: true
   tasks:
   - block:
-    - name: Install 7zip
+    - name: Install flashplayerppapi
       win_chocolatey:
         name: flashplayerpp
         state: present
     rescue:
-    - name: Install 7zip
+    - name: Install flashplayerppapi
       win_chocolatey:
         name: flashplayerppapi
         state: absent
+    always:
+    - name: I am God
+      debug: 
+        msg: no one can stop me, huhuhu 
+  - name: This is a task
+    debug:
+      msg: hellow world
 
 
