@@ -1,6 +1,7 @@
 ---
 - name: Testing Handlers
   hosts: all
+  ignore_errors: true
   tasks:
   - name: Install winrar
     win_chocolatey:
@@ -12,7 +13,6 @@
     debug:   
       msg: failling TASK
     failed_when: true
-    ignore_errors: true
   - name: This is another task
     debug:
       mag: final task  
