@@ -1,0 +1,22 @@
+---
+- name: Testing Handlers
+  hosts: all
+  tasks:
+  - name: Install winrar
+    win_chocolatey:
+      name: winrar
+      state: present
+    notify:
+    - reboot server
+  - name: failling the task
+    debug:   
+      msg: failling TASK
+    failed_when: true
+    ignore_errors: true
+  - name: This is another task
+    debug:
+      final task  
+  handlers:
+  - name: reboot server
+    win_reboot:
+...
