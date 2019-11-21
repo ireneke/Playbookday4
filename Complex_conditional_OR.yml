@@ -12,5 +12,5 @@
       name: "{{ item }}"
       state: present
       loop: "{{ my_package }}"
-    when: ansible_facts['distribution'] == "Microsoft Windows Server 2016 Core" or ansible_facts['architecture'] == "64-bit"
+    when: ansible_facts['distribution'] == "Microsoft Windows Server 2016 Core" or ansible_facts['distribution'] == "Microsoft Windows Server 2016 Datacenter" or ansible_facts['distribution'] == "Microsoft Windows Server 2012 Core" or ansible_facts['distribution'] == "Microsoft Windows Server 2012 datacenter"
 ...
